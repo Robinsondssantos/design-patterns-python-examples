@@ -1,4 +1,4 @@
-# Desing patterns - Python examples
+# Design patterns - Python examples
 
 - **Behavioral patterns**
   - [Observer](behavioral/observer)

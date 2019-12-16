@@ -82,12 +82,12 @@ def main():
     event = Event('temperature.high')
     event.add_handler(event_handler1)
     event.add_handler(event_handler2)
-    # print('notified', event.register('isso é um evento', banana=10))
+    # print('notified', event.register('event', value = 45))
     print('event', event.get_handlers())
 
     event_pool = EventPool()
     event_pool.add_event(event)
-    print('notifired:', event_pool.register('temperature.high', 'isso é um evento', {'banana': 10}))
+    print('notifired:', event_pool.register('temperature.high', 'event', {'value': 45}))
 
 
 if __name__ == '__main__':

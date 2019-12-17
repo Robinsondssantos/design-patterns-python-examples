@@ -1,8 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 from probe import Probe
-
 import unittest
 
 

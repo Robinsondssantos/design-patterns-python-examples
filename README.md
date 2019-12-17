@@ -4,7 +4,7 @@
   - [Observer](behavioral/observer)
   - [State](behavioral/state)
 
-- ***Structural patterns**
+- **Structural patterns**
   - [Decorator](structural/decorator)
 
 ## Reference

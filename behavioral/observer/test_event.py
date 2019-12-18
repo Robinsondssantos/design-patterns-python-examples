@@ -60,29 +60,29 @@ class TestEventPool(unittest.TestCase):
 
     def test_add_event(self):
         self._event_pool.add_event(self._event_low_temperature)
-        self.assertEqual(self._event_low_temperature, 
-                         self._event_pool.get_events()[self._event_low_temperature.get_name()])
+        self.assertEqual(self._event_pool.get_events()[self._event_low_temperature.get_name()],
+                         self._event_low_temperature)
 
     def test_remove_event(self):
         self._event_pool.add_event(self._event_low_temperature)
         self._event_pool.remove_event(self._event_low_temperature)
-        self.assertEqual({}, self._event_pool.get_events())
+        self.assertEqual(self._event_pool.get_events(), {})
 
     def test_count_events(self):
         self._event_pool.add_event(self._event_high_temperature)
         self._event_pool.add_event(self._event_low_temperature)
-        self.assertEqual(2, len(self._event_pool.get_events()))
+        self.assertEqual(len(self._event_pool.get_events()), 2)
 
     def test_count_notified(self):
         self._event_pool.add_event(self._event_high_temperature)
         self._event_pool.add_event(self._event_low_temperature)
-        self.assertEqual(1, self._event_pool.register('temperature.high', 'payload'))           
+        self.assertEqual(self._event_pool.register('temperature.high', 'payload'), 1)           
 
     def test_clear_events(self):
         self._event_pool.add_event(self._event_high_temperature)
         self._event_pool.add_event(self._event_low_temperature)
         self._event_pool.clear_events()
-        self.assertEqual(0, len(self._event_pool.get_events()))
+        self.assertEqual(len(self._event_pool.get_events()), 0)
 
 
 if __name__ == '__main__':
